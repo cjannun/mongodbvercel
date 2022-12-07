@@ -57,19 +57,21 @@ export default function Home({
   return (
     <div className="container">
       <Head>
-        <title>Create Next App</title>
+        <title>TL Swat Report</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main>
         <h1 className="title">
-          Welcome to <a href="https://nextjs.org">Next.js with MongoDB!</a>
+          Team Liquid's Swatting Report Status
         </h1>
         <div className="grid">
           {playersAndReports.map((player) => (
-            <div className="card" key={player._id.toString()}>
+            <div className="card" key={player._id}>
               <h2>{player.name}</h2>
-              <p>{player.reports}</p>
+              <p>Recent Reports: {player.reports}</p>
+              <p>Local Police Dept.:{player.policeDept}</p>
+              <p>Local Police Phone:{player.policePhoneNumber}</p>
             </div>
           ))}
         </div>        
@@ -144,6 +146,7 @@ export default function Home({
           margin: 0;
           line-height: 1.15;
           font-size: 4rem;
+          color: #0A1723;
         }
 
         .title,
@@ -186,7 +189,7 @@ export default function Home({
           text-align: left;
           color: inherit;
           text-decoration: none;
-          border: 1px solid #eaeaea;
+          border: 1px solid #0A1723;
           border-radius: 10px;
           transition: color 0.15s ease, border-color 0.15s ease;
         }
@@ -194,8 +197,8 @@ export default function Home({
         .card:hover,
         .card:focus,
         .card:active {
-          color: #0070f3;
-          border-color: #0070f3;
+          color: #BBAD41;
+          border-color: #BBAD41;
         }
 
         .card h3 {

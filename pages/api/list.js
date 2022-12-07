@@ -8,14 +8,10 @@ export default async function handler(request, response) {
     const results = await collection
       .find({})
       .project({
-        name: 0,
         streetAddress: 0,
         country: 0,
         state: 0,
         city: 0,
-        policeDept: 0,
-        policePhoneNumber: 0,
-        reports: 0,
       })
       .limit(10)
       .toArray();
