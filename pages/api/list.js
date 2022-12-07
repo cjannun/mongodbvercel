@@ -1,5 +1,9 @@
 import { connectToDatabase } from "../../lib/connectToDatabase";
 
+<script async
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBir_vOTx0F4JfL28QfCzewZyX2QB366Z8&libraries=places&callback=initMap">
+</script>
+
 export default async function handler(request, response) {
   try {
     const { mongoClient } = await connectToDatabase();
@@ -10,8 +14,6 @@ export default async function handler(request, response) {
       .project({
         streetAddress: 0,
         country: 0,
-        state: 0,
-        city: 0,
       })
       .limit(10)
       .toArray();

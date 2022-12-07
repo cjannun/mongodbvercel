@@ -70,8 +70,7 @@ export default function Home({
             <div className="card" key={player._id}>
               <h2>{player.name}</h2>
               <p>Recent Reports: {player.reports}</p>
-              <p>Local Police Dept.:{player.policeDept}</p>
-              <p>Local Police Phone:{player.policePhoneNumber}</p>
+              <p><a href={`https://www.google.com/maps/search/?api=1&query=police+stations+near+${player.city},+${player.state}`} target="_blank" rel="noopener noreferrer">Local Police Dept.</a></p>
             </div>
           ))}
         </div>        
@@ -187,9 +186,10 @@ export default function Home({
           flex-basis: 45%;
           padding: 1.5rem;
           text-align: left;
-          color: inherit;
+          color: #fafafa;
           text-decoration: none;
-          border: 1px solid #0A1723;
+          background-color: #0A1723;
+          border: 2px solid #0A1723;
           border-radius: 10px;
           transition: color 0.15s ease, border-color 0.15s ease;
         }
@@ -198,7 +198,8 @@ export default function Home({
         .card:focus,
         .card:active {
           color: #BBAD41;
-          border-color: #BBAD41;
+          border: 2px solid #BBAD41;
+          border-radius: 10px;
         }
 
         .card h3 {
